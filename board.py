@@ -27,7 +27,7 @@ class Board:
     def is_valid_move(self, location):
         return(location is not None and
                 location >= "1" and location <= str(self.numTotalSpaces) and 
-                int(location) in range(1,self.numTotalSpaces) and 
+                int(location) in range(1,self.numTotalSpaces+1) and 
                 self.moves[int(location)-1].integer == 0)
 
     # ----- Code for Checking Game State -----

@@ -1,11 +1,25 @@
 # tic-tac-toe-python
-A Python implementation of tic tac toe.
+A command line version of tic tac toe implemented in Python. 
 
+
+## 
+
+Using Python3 
+
+To run the game from the command line:
+```
+python3 main.py
+```
+
+To run the test from the command line:
+```
+python3 main.py
+```
 
 
 ### Planning my Code
 
-Before I started coding, I came up with a solid plan. I walked through each step of a game to figure out the scope of the project, which helped me figure out what data I needed to track and what problems I may encounter. As I did this, I also drafted a version of my classes and their responsibilities.
+Before I started coding, I came up with a plan. I walked through each step of a game to figure out the scope of the project, which helped me figure out what data I needed to track and what problems I may encounter. As I did this, I also drafted a version of my classes and their responsibilities.
 
 
 #### Walking through a game:

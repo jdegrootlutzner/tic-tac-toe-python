@@ -18,13 +18,12 @@ class Controller:
         self.gamesPlayed = 0
     
     def play_game(self):
-        print(self.board)
         while not self.board.is_game_over():
             print(self.board)
             location = self.get_valid_move()
             self.board.add_move(location, self.currentPlayer.get_letter())
-            print(self.board)
             self.currentPlayer = self.get_next_player()
+        print(self.board)
         self.gamesPlayed += 1
         self.print_game_over()
         self.print_score()
