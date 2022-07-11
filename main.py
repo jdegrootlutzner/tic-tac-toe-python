@@ -1,7 +1,7 @@
 """
 @author Julian
 @date Summer 2022
-@brief This is the player class.
+@brief Play tic tac toe on the command line.
 
 """
 from controller import Controller
