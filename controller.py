@@ -46,6 +46,8 @@ class Controller:
 
     def introduce_game(self):
         print('Welcome to Tic Tac Toe!')
+        print(repr(self.board))
+        print('Make a move by entering a number between 1 and 9.')
 
     def get_valid_move(self):
         move = self.currentPlayer.prompt_move()
