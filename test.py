@@ -25,7 +25,7 @@ def test_empty():
     assert board._is_full() == False, f"false expected, got: {board.is_game_over()}"
     assert board._is_tie() == False, f"false expected, got: {board.is_game_over()}"
 
-def test_diag():
+def test_diag_x():
     board = Board()
     board.add_move(1, "X")
     board.add_move(5, "X")
@@ -36,8 +36,18 @@ def test_diag():
     assert board._is_tie() == False, f"false expected, got: {board.is_game_over()}"
     assert board._is_full() == False, f"true expected, got: {board.is_game_over()}"
 
+def test_diag_o():
+    board = Board()
+    board.add_move(1, "O")
+    board.add_move(5, "O")
+    board.add_move(9, "O")
+    board.is_game_over()
+    assert board.is_game_over() == True, f"true expected, got: {board.is_game_over()}"
+    assert board.is_winner() == True, f"true expected, got: {board.is_game_over()}"
+    assert board._is_tie() == False, f"false expected, got: {board.is_game_over()}"
+    assert board._is_full() == False, f"true expected, got: {board.is_game_over()}"
 
-def test_row():
+def test_row_o():
     board = Board()
     board.add_move(4, "O")
     board.add_move(5, "O")
@@ -48,8 +58,18 @@ def test_row():
     assert board._is_tie() == False, f"false expected, got: {board.is_game_over()}"
     assert board._is_full() == False, f"true expected, got: {board.is_game_over()}"
 
+def test_row_x():
+    board = Board()
+    board.add_move(4, "X")
+    board.add_move(5, "X")
+    board.add_move(6, "X")
+    board.is_game_over()
+    assert board.is_game_over() == True, f"true expected, got: {board.is_game_over()}"
+    assert board.is_winner() == True, f"true expected, got: {board.is_game_over()}"
+    assert board._is_tie() == False, f"false expected, got: {board.is_game_over()}"
+    assert board._is_full() == False, f"true expected, got: {board.is_game_over()}"
 
-def test_col():
+def test_col_x():
     board = Board()
     board.add_move(1, "X")
     board.add_move(2, "X")
@@ -60,12 +80,22 @@ def test_col():
     assert board._is_tie() == False, f"false expected, got: {board.is_game_over()}"
     assert board._is_full() == False, f"true expected, got: {board.is_game_over()}"
 
+def test_col_o():
+    board = Board()
+    board.add_move(1, "O")
+    board.add_move(2, "O")
+    board.add_move(3, "O")
+    board.is_game_over()
+    assert board.is_game_over() == True, f"true expected, got: {board.is_game_over()}"
+    assert board.is_winner() == True, f"true expected, got: {board.is_game_over()}"
+    assert board._is_tie() == False, f"false expected, got: {board.is_game_over()}"
+    assert board._is_full() == False, f"true expected, got: {board.is_game_over()}"
 
 def test_tie():
     board = Board()
     board.add_move(1, "X")
-    board.add_move(2, "X")
-    board.add_move(3, "O")
+    board.add_move(2, "O")
+    board.add_move(3, "X")
     board.add_move(4, "X")
     board.add_move(5, "O")
     board.add_move(6, "X")
@@ -78,28 +108,11 @@ def test_tie():
     assert board._is_tie() == True, f"true expected, got: {board.is_game_over()}"
 
 
-def test_full():
-    board = Board()
-    board.add_move(1, "X")
-    board.add_move(2, "X")
-    board.add_move(3, "O")
-    board.add_move(4, "X")
-    board.add_move(5, "O")
-    board.add_move(6, "X")
-    board.add_move(7, "O")
-    board.add_move(8, "X")
-    board.add_move(9, "O")
-    assert board.is_game_over() == True, f"true expected, got: {board.is_game_over()}" 
-    assert board.is_winner() == False, f"false expected, got: {board.is_game_over()}" 
-    assert board._is_full() == True, f"true expected, got: {board.is_game_over()}"
-    assert board._is_tie() == True, f"false expected, got: {board.is_game_over()}"
-
-
 def test_almost_full():
     board = Board()
     board.add_move(1, "X")
-    board.add_move(2, "X")
-    board.add_move(3, "O")
+    board.add_move(2, "O")
+    board.add_move(3, "X")
     board.add_move(4, "X")
     board.add_move(5, "O")
     board.add_move(6, "X")
@@ -113,8 +126,11 @@ def test_almost_full():
 
 if __name__ == "__main__":
     test_empty()
-    test_diag()
-    test_row()
-    test_col()
+    test_diag_x()
+    test_diag_o()
+    test_row_x()
+    test_row_o()
+    test_col_x()
+    test_col_o()
     test_tie()
-    test_full()
+    test_almost_full()

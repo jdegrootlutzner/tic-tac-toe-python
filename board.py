@@ -71,7 +71,7 @@ class Board:
         return(int(self.moves[2]) + int(self.moves[4]) + int(self.moves[6]))
 
     def _is_win_diag(self):
-        return((self._ltr_diag_as_int() == self.numCols) or (self._rtl_diag_as_int() == self.numCols))
+        return((abs(self._ltr_diag_as_int()) == self.numCols) or (abs(self._rtl_diag_as_int()) == self.numCols))
 
 
     # ----- Code for Printing -----

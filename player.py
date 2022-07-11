@@ -17,7 +17,7 @@ class Player:
 
     
     def prompt_move(self):
-        return input("Enter your move: ")
+        return input(f'{ self.name }, enter your move:\n' )
 
     # ---- get and set current letter ----
 
